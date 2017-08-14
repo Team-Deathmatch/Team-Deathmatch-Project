@@ -28,8 +28,8 @@ class App extends React.Component {
                     <div>
                     <Navbar/>
                     <Switch>
-                        <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/base" component={Base} />
+                        <Route exact path="/" component={ProfileListContainer}/>
+                        <Route exact path="/home" component={Base} />
                     </Switch>
                     <Footer/>
                     </div>
