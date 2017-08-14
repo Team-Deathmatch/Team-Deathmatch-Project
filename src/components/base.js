@@ -6,11 +6,7 @@ class Base extends React.Component {
             <div className="row content">
             <div className="col-lg-12">
                 <div className="signup">
-                <h1>A Website to Manage Your Games</h1>
-
-                    <button className="btn btn-success shift">
-                        Sign Up
-                    </button>
+                <h1 className="title">A Website to Manage Your Games</h1>
                 </div>
             </div>
             </div>

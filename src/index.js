@@ -10,7 +10,7 @@ import {Route, BrowserRouter, Switch} from "react-router-dom";
 import ProfileListContainer from "./containers/profile-list-container";
 
 //import components
-import Base from "./components/base";
+import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
 
 //css
@@ -19,19 +19,19 @@ import "./index.css";
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
 
-
 class App extends React.Component {
     render() {
         return (
             <div className="container-fluid">
                 <BrowserRouter>
                     <div>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/base" component={Base} />
-                    </Switch>
-                    <Footer/>
+                        <Navbar/>
+                        <Switch>
+                            <Route exact path="/profile" component={ProfileListContainer}/>
+                            <Route exact path="/home" component={BaseContainer}/>
+                            <Route exact path="/" component={ProfileListContainer}/>
+                        </Switch>
+                        <Footer/>
                     </div>
                 </BrowserRouter>
             </div>
