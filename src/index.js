@@ -19,21 +19,19 @@ import "./index.css";
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
 
-
 class App extends React.Component {
     render() {
         return (
             <div className="container-fluid">
                 <BrowserRouter>
                     <div>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/home" component={BaseContainer} />
-                        <Route exact path="/" component={ProfileListContainer}/>
-                        <Route exact path="/home" component={Base} />
-                    </Switch>
-                    <Footer/>
+                        <Navbar/>
+                        <Switch>
+                            <Route exact path="/profile" component={ProfileListContainer}/>
+                            <Route exact path="/home" component={BaseContainer}/>
+                            <Route exact path="/" component={ProfileListContainer}/>
+                        </Switch>
+                        <Footer/>
                     </div>
                 </BrowserRouter>
             </div>
