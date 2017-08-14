@@ -30,6 +30,8 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/profile" component={ProfileListContainer}/>
                         <Route exact path="/home" component={BaseContainer} />
+                        <Route exact path="/" component={ProfileListContainer}/>
+                        <Route exact path="/home" component={Base} />
                     </Switch>
                     <Footer/>
                     </div>
