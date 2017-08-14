@@ -4,6 +4,10 @@ import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers/";
+import Navbar from "./components/navbar";
+import "./index.css";
+import {Route, BrowserRouter, Switch} from "react-router-dom";
+import ProfileListContainer from "./containers/profile-list-container";
 
 //import components
 import Base from "./components/base";
@@ -15,12 +19,21 @@ import "./index.css";
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
 
-class App extends React.Component{
+
+class App extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <Base/>
-                <Footer/>
+                <BrowserRouter>
+                    <div>
+                    <Navbar/>
+                    <Switch>
+                        <Route exact path="/profile" component={ProfileListContainer}/>
+                        <Route exact path="/base" component={Base} />
+                    </Switch>
+                    <Footer/>
+                    </div>
+                </BrowserRouter>
             </div>
         );
     }
@@ -28,4 +41,6 @@ class App extends React.Component{
 }
 
 
-ReactDOM.render(<Provider store={STORE}><App/></Provider>, document.querySelector("#root"));
+ReactDOM.render(
+    <Provider store={STORE}><App/></Provider>
+    , document.querySelector("#root"));
