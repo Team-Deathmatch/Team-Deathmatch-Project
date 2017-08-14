@@ -1,0 +1,25 @@
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    background-color: deepskyblue;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.profile-name {
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.bar {
+    width: 80%;
+    height: 1px;
+    background-color: black;
+}
+
+#play {
+    font-family: 'Play', sans-serif;
+}
+body {
+    background: url("./pictures/steam_cog.png");
+}

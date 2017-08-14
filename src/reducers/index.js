@@ -1,8 +1,8 @@
-let defaulState = {
-    thisIsntReal: ""
+let defaultState = {
+    ownedGameList: []
 };
 
-let mainReducer = (state = defaulState, action) => {
+let mainReducer = (state = defaultState, action) => {
     if(action.type === "SET_DATA")  {
 
     } else {
