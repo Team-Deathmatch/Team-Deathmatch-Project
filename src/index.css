@@ -1,3 +1,29 @@
+
+.foot{
+    background-color: goldenrod;
+    height: 100px;
+    text-align: center
+
+}
+
+.signup{
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 25px
+}
+
+.content{
+    background-color: red
+}
+
+.hub{
+    font-size: 20px
+}
+
+.shift{
+    margin-top: 20px
+}
+
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -22,4 +48,5 @@
 }
 body {
     background: url("./pictures/steam_cog.png");
+
 }
