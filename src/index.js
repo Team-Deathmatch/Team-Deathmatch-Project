@@ -4,18 +4,19 @@ import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers/";
-import Navbar from "./components/navbar";
 import "./index.css";
 import {Route, BrowserRouter, Switch} from "react-router-dom";
-import ProfileListContainer from "./containers/profile-list-container";
 
 //import components
-import Base from "./components/base";
+import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
+import ProfileListContainer from "./containers/profile-list-container";
+import Navbar from "./components/navbar";
+
 
 //css
 import "./index.css";
-import About from "./components/about";
+import SearchContainer from "./containers/search-container";
 
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
@@ -29,8 +30,8 @@ class App extends React.Component {
                         <Navbar/>
                         <Switch>
                             <Route exact path="/profile" component={ProfileListContainer}/>
-                            <Route exact path="/base" component={Base}/>
-                            <Route exact path="/about" component={About}/>
+                            <Route exact path="/" component={BaseContainer}/>
+                            <Route exact path="/search" component={SearchContainer} />
                         </Switch>
                         <Footer/>
                     </div>

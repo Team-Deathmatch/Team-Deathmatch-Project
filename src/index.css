@@ -1,28 +1,38 @@
-
+/* footer */
 .foot{
-    background-color: goldenrod;
+    background-color: #171a21;
     height: 100px;
-    text-align: center
-
+    text-align: center;
+    color: gray;
+    margin-top: 350px
 }
 
+.rights{
+    margin-top: 30px
+}
+
+/* base page */
 .signup{
     text-align: center;
     margin-bottom: 50px;
     letter-spacing: 25px
 }
 
-.content{
-    background-color: red
+.title{
+    font-size: 40px
 }
 
-.hub{
-    font-size: 20px
+.content{
+    background-color: #171a21;
+    color: gray;
+    margin-top: 300px;
 }
 
 .shift{
-    margin-top: 20px
+    margin-top: 30px;
+    background-color: #99b806
 }
+
 
 
 /*Profile and Navbar CSS*/
@@ -50,31 +60,49 @@
     font-family: 'Play', sans-serif;
 }
 body {
-    background: url("./pictures/steam_cog.png");
+    background: url("./pictures/navy-cloud.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: white;
 }
 
-.navbar {
+.navbar-custom {
+    width: 100%;
+    height: 100px;
     background-color: rgba(29, 29, 29, 0.94);
 }
 
-.center .navbar-inner {
-    text-align: center;
-}
-
-.center .navbar-inner .nav {
-    display:inline-block;
+.nav-items li {
+    display: inline-block;
     float: none;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
 }
 
-.navbar-nav li a, .navbar-brand, .navbar-form {
-    line-height: 55px;
-    font-size: 20px;
-    font-family: 'Play', sans-serif;
+.link {
     color: white;
+    font-size: 15px;
+}
+
+.link-title {
+    color: white;
+    font-size: 25px;
+    margin-right: 50px
+}
+
+.nav-items {
+    text-align: center;
+    line-height: 70px;
+    font-family: 'Play', sans-serif;
 }
 
 .main-page {
     margin: 100px;
+}
+
+.navbar {
+    height: 100px;
 }
 /*End of profile and navbar css*/
