@@ -4,6 +4,12 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.7",
+    "passport": "^0.4.0",
     "passport-steam": "^1.0.8",
     "react": "^15.6.1",
     "react-autobind": "^1.0.6",
