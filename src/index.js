@@ -13,6 +13,7 @@ import ProfileListContainer from "./containers/profile-list-container";
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
 
+
 class App extends React.Component {
     render() {
         return (
