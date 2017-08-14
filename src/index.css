@@ -24,6 +24,8 @@
     margin-top: 20px
 }
 
+
+/*Profile and Navbar CSS*/
 .profile-pic {
     width: 150px;
     height: 150px;
@@ -35,12 +37,13 @@
 .profile-name {
     margin-left: 20px;
     display: inline-block;
+    color: white;
 }
 
 .bar {
     width: 80%;
     height: 1px;
-    background-color: black;
+    background-color: white;
 }
 
 #play {
@@ -48,5 +51,30 @@
 }
 body {
     background: url("./pictures/steam_cog.png");
-
+    color: white;
 }
+
+.navbar {
+    background-color: rgba(29, 29, 29, 0.94);
+}
+
+.center .navbar-inner {
+    text-align: center;
+}
+
+.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+}
+
+.navbar-nav li a, .navbar-brand, .navbar-form {
+    line-height: 55px;
+    font-size: 20px;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+
+.main-page {
+    margin: 100px;
+}
+/*End of profile and navbar css*/
