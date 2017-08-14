@@ -10,7 +10,7 @@ import {Route, BrowserRouter, Switch} from "react-router-dom";
 import ProfileListContainer from "./containers/profile-list-container";
 
 //import components
-import Base from "./components/base";
+import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
 
 //css
@@ -29,7 +29,7 @@ class App extends React.Component {
                     <Navbar/>
                     <Switch>
                         <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/base" component={Base} />
+                        <Route exact path="/home" component={BaseContainer} />
                     </Switch>
                     <Footer/>
                     </div>
