@@ -19,7 +19,6 @@ import "./index.css";
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
 
-
 class App extends React.Component {
     render() {
         return (
@@ -32,6 +31,13 @@ class App extends React.Component {
                         <Route exact path="/" component={BaseContainer} />
                     </Switch>
                     <Footer/>
+                        <Navbar/>
+                        <Switch>
+                            <Route exact path="/profile" component={ProfileListContainer}/>
+                            <Route exact path="/home" component={BaseContainer}/>
+                            <Route exact path="/" component={ProfileListContainer}/>
+                        </Switch>
+                        <Footer/>
                     </div>
                 </BrowserRouter>
             </div>
