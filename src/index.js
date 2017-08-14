@@ -15,9 +15,9 @@ import Footer from "./components/footer";
 
 //css
 import "./index.css";
+import About from "./components/about";
 
 const STORE = createStore(reducers, applyMiddleware(thunk));
-
 
 
 class App extends React.Component {
@@ -26,12 +26,13 @@ class App extends React.Component {
             <div className="container-fluid">
                 <BrowserRouter>
                     <div>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/base" component={Base} />
-                    </Switch>
-                    <Footer/>
+                        <Navbar/>
+                        <Switch>
+                            <Route exact path="/profile" component={ProfileListContainer}/>
+                            <Route exact path="/base" component={Base}/>
+                            <Route exact path="/about" component={About}/>
+                        </Switch>
+                        <Footer/>
                     </div>
                 </BrowserRouter>
             </div>
