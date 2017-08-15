@@ -38,7 +38,7 @@ class BaseContainer extends React.Component {
         } else {
             return (
                 <div>
-                    <User gamesOwned={this.props.gamesOwned} currentUser={this.props.currentUser}/>
+                    <User currentUser={this.props.currentUser}/>
                 </div>
             )
         }

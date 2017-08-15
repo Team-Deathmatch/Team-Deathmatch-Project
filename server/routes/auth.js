@@ -17,7 +17,7 @@ authRouter.get('/steam',
 authRouter.get('/steam/return',
     // Issue #37 - Workaround for Express router module stripping the full url, causing assertion to fail
     function (req, res, next) {
-        req.url = req.originalUrl;
+        // req.url = req.originalUrl;
         next();
     },
     passport.authenticate('steam', {failureRedirect: '/'}),

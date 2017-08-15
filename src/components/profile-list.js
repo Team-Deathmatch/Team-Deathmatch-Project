@@ -1,17 +1,23 @@
 import React from "react";
-import ProfileContainer from "../containers/profile-container";
+import Profile from "./profile";
+
 
 class ProfileList extends React.Component {
-    // genGames() {
-    //     return this.props.ownedGameList.map((item, index) => {
-    //         return <ProfileContainer game={item} key={item.game + index} />
-    //     })
-    // }
+    genGames() {
+        return this.props.gamesOwned.sort((a, b) => {
+            return b.playtime_forever - a.playtime_forever;
+        }).map((item, index) => {
+            return <Profile currentUser={this.props.currentUser} game={item} index={index} key={item + index}/>
+        })
+    }
+
     render() {
-        return(
-            <div>
-                <ProfileContainer/>
-            </div>
+        return (
+                <div className="games-scroll">
+                    <h1 className="play">OWNED GAMES</h1>
+                    <div className="bar"/>
+                    {this.genGames()}
+                </div>
         )
     }
 }
