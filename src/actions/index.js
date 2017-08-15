@@ -1,5 +1,16 @@
 import axios from "axios";
 
+export function searchGames(str) {
+    return (dispatch) =>{
+        axios.get(`http://localhost:8080/find-games/${str}`).then((response) =>{
+            dispatch(setGameSearch(response.data.data))
+        }).catch((error) =>{
+            throw error
+        })
+    }
+
+}
+
 export function getOwnedGames(id) {
     return (dispatch) => {
         axios.get(`http://localhost:8080/steam/${id}`).then((response) => {
@@ -11,6 +22,13 @@ export function getOwnedGames(id) {
 
 }
 
+export function setGameSearch(data) {
+    return {
+        type: "GAME_SEARCH",
+        data
+    }
+
+}
 
 export function setOwnedGames(data) {
     return {

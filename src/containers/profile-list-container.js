@@ -11,7 +11,6 @@ class ProfileListContainer extends React.Component {
         super();
         this.state = {
             title: "",
-            price: "",
             hoursPlayed: ""
         };
         autoBind(this);

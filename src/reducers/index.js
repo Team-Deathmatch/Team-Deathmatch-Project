@@ -1,7 +1,8 @@
 let defaultState = {
     ownedGameList: [],
     currentUser: {},
-    gamesOwned: []
+    gamesOwned: [],
+    searchedGames: []
 };
 
 let mainReducer = (state = defaultState, action) => {
@@ -14,6 +15,11 @@ let mainReducer = (state = defaultState, action) => {
         return {
             ...state,
             gamesOwned: action.data
+        }
+    } else if(action.type === "GAME_SEARCH"){
+        return {
+            ...state,
+            searchedGames: action.data
         }
     } else {
         return {

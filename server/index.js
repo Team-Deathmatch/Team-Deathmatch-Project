@@ -8,6 +8,7 @@ let path = require("path");
 let request = require('request');
 
 let authRouter = require('./routes/auth.js');
+let gameRouter = require('./routes/find-game.js');
 
 passport.serializeUser(function (user, done) {
     done(null, user);
@@ -33,7 +34,7 @@ passport.use(new SteamStrategy({
 
 let PORT = process.env.PORT || 8080;
 
-mongoose.connect(`mongodb://localhost:27017/example`);
+mongoose.connect(`mongodb://localhost:27017/steamapp`);
 
 
 let app = express();
@@ -47,6 +48,7 @@ app.use(passport.initialize());
 
 
 app.use('/auth', authRouter);
+app.use('/find-games', gameRouter);
 
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
