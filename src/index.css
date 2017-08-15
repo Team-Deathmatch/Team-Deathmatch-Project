@@ -112,6 +112,9 @@ body {
     margin: 100px;
 }
 
+.navbar {
+    height: 100px;
+}
 /* media queires base page*/
 @media only screen and (max-width: 1200px){
     .foot{
@@ -122,8 +125,3 @@ body {
         margin-top: 300px
     }
 }
-
-.navbar {
-    height: 100px;
-}
-/*End of profile and navbar css*/
