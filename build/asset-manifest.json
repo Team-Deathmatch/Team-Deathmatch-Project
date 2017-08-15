@@ -2,11 +2,16 @@
   "main.css": "static/css/main.cc3fbd70.css",
   "main.css.map": "static/css/main.cc3fbd70.css.map",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "main.js": "static/js/main.b3c66085.js",
   "main.js.map": "static/js/main.b3c66085.js.map",
 =======
   "main.js": "static/js/main.0c0408f4.js",
   "main.js.map": "static/js/main.0c0408f4.js.map",
 >>>>>>> profile-page
+=======
+  "main.js": "static/js/main.b3c66085.js",
+  "main.js.map": "static/js/main.b3c66085.js.map",
+>>>>>>> update-base
   "static/media/steam_cog.png": "static/media/steam_cog.dded66f4.png"
 }

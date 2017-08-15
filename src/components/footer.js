@@ -19,6 +19,7 @@ class Footer extends React.Component {
                         </span>
                         <h5 className="rights">Copyrights <FontAwesome name="copyright"/> Team-Deathmatch 2017</h5>
 
+
                 </div>
                 <div className="col-lg-4">
                     <h3>Wyatt Blackhurst</h3>
@@ -28,6 +29,11 @@ class Footer extends React.Component {
 
                 </div>
 
+                <div className="row">
+                 <div className="col-lg-offset-4 col-lg-4">
+                     <h5 className="rights">Copyrights <FontAwesome name="copyright"/> Team-Deathmatch 2017</h5>
+                    </div>
+                </div>
             </div>
         );
     }
