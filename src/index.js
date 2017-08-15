@@ -25,17 +25,10 @@ class App extends React.Component {
             <div className="container-fluid">
                 <BrowserRouter>
                     <div>
-                    <Navbar/>
-                    <Switch>
-                        <Route exact path="/profile" component={ProfileListContainer}/>
-                        <Route exact path="/" component={BaseContainer} />
-                    </Switch>
-                    <Footer/>
                         <Navbar/>
                         <Switch>
                             <Route exact path="/profile" component={ProfileListContainer}/>
-                            <Route exact path="/home" component={BaseContainer}/>
-                            <Route exact path="/" component={ProfileListContainer}/>
+                            <Route exact path="/" component={BaseContainer}/>
                         </Switch>
                         <Footer/>
                     </div>
