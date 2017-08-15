@@ -1,15 +1,11 @@
 let defaultState = {
     ownedGameList: [],
-    currentUser: {
-        id: ""
-    },
+    currentUser: {},
     gamesOwned: []
 };
 
 let mainReducer = (state = defaultState, action) => {
-    if (action.type === "SET_DATA") {
-
-    } else if (action.type === "SET_USER") {
+    if (action.type === "SET_USER") {
         return {
             ...state,
             currentUser: action.data

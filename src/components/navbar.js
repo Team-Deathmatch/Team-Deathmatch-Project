@@ -12,7 +12,7 @@ class Navbar extends React.Component {
                         <li><Link className="link-title" to="/">Team Deathmatch</Link></li>
                         <li><Link className="link" to="/profile">Profile</Link></li>
                         <li><Link className="link" to="/search">Search</Link></li>
-                        <li><Link className="link" to="#">Sign In</Link></li>
+                        {/*<li><Link className="link" to="#">Sign In</Link></li>*/}
                     </div>
                 </div>
             </div>

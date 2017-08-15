@@ -7,27 +7,29 @@ import User from "../components/user";
 
 class BaseContainer extends React.Component {
     componentWillMount() {
-        let infoArr = window.location.href.split("&");
-        let finalArr = [];
-        for (let i = 0; i < infoArr.length; i++) {
-            finalArr.push(infoArr[i].split("="));
+        if (this.props.currentUser.id === undefined) {
+            let infoArr = window.location.href.split("&");
+            let finalArr = [];
+            for (let i = 0; i < infoArr.length; i++) {
+                finalArr.push(infoArr[i].split("="));
 
+            }
+            let finalObj = {};
+            finalArr.forEach((item => {
+                finalObj[item[0]] = [item[1]];
+            }));
+            this.props.setUser(finalObj);
+            if (finalObj.id !== undefined) {
+                console.log(finalObj.id);
+                this.props.getOwnedGames(finalObj.id);
+            }
         }
-        let finalObj = {};
-        finalArr.forEach((item => {
-            finalObj[item[0]] = [item[1]];
-        }));
-        this.props.setUser(finalObj);
-        if(finalObj.id !== undefined) {
-            console.log(finalObj.id);
-            this.props.getOwnedGames(finalObj.id);
-        }
+
     }
 
     render() {
-        console.log(this.props.currentUser);
         console.log(this.props.currentUser.id);
-        if (this.props.currentUser.id.length <= 0) {
+        if (this.props.currentUser.id === undefined) {
             return (
                 <div>
                     <Base/>
