@@ -2,8 +2,9 @@ let express = require('express');
 let authRouter = express.Router();
 let passport = require('passport');
 let path = require("path");
-
 // authRouter.use(express.static(path.resolve(__dirname, "..", "build")));
+
+
 
 
 

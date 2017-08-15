@@ -9,7 +9,7 @@ class Navbar extends React.Component {
                 <nav className="navbar center navbar-default navbar-fixed-top center">
                     <div className="navbar-inner">
                         <div className="navbar-header">
-                            <a className="navbar-brand" href="/">Team Deathmatch</a>
+                            <Link to="/"><a className="navbar-brand">Team Deathmatch</a></Link>
                         </div>
                         <ul className="nav navbar-nav">
                             <li><Link to="/profile">Profile</Link></li>

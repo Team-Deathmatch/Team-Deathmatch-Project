@@ -5,6 +5,7 @@ let mongoose = require("mongoose");
 let passport = require('passport');
 let SteamStrategy = require("passport-steam");
 let path = require("path");
+let request = require('request');
 
 let authRouter = require('./routes/auth.js');
 
@@ -47,46 +48,22 @@ app.use(passport.initialize());
 
 app.use('/auth', authRouter);
 
+
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 
-// app.get('/auth/steam',
-//     passport.authenticate('steam'),
-//     function (req, res) {
-//         res.redirect('/');
-//     });
-
-// app.get('/auth/steam/return',
-//     passport.authenticate('steam', { failureRedirect: '/login' }),
-//     function(req, res) {
-//         // Successful authentication, redirect home.
-//         res.redirect('/');
-//     });
-// app.get('/auth/steam/return',
-//     // Issue #37 - Workaround for Express router module stripping the full url, causing assertion to fail
-//     function (req, res, next) {
-//         next();
-//     },
-//     passport.authenticate('steam', {failureRedirect: '/'}),
-//     function (req, res) {
-//     let query = "?";
-//     for(let key in req.user) {
-//         if(typeof req.user[key] !== "string") {
-//             for(let secKey in req.user[key]) {
-//                 if(secKey === "avatar") {
-//                     query += "avatar=" + req.user[key][secKey] + "&";
-//                 }
-//             }
-//         } else {
-//             query += key + "=" + req.user[key] + "&";
-//         }
-//
-//     }
-//         res.redirect('/' + query);
-//     });
-
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
+});
+
+app.get('/steam/:id', (req, res) =>{
+    request(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=9F65B950F0EC9ECABF9DE3D7F46E9A5B&steamid=${req.params.id}&include_appinfo=1&format=json`, (err, response, body) =>{
+        if(err){
+            res.status(500).send({"Message": "Error on Server", err});
+        } else {
+            res.status(200).send({"Message": "Here is your data", data: JSON.parse((body))})
+        }
+    })
 });
 
 
@@ -94,17 +71,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is starting on port ${PORT}`)
 });
-
-
-// let infoArr = window.location.href.split("&");
-// let finalArr = [];
-// for(let i = 0; i < infoArr.length; i++){
-//     finalArr.push(infoArr[i].split("="));
-//
-// }
-// let finalObj = {};
-// finalArr.forEach((item =>{
-//     finalObj[item[0]] = [item[1]];
-// }));
-// console.log(finalObj);
 
