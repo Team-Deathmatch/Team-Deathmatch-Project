@@ -72,28 +72,42 @@
     font-family: 'Play', sans-serif;
 }
 body {
-    background: url("./pictures/steam_cog.png");
+    background: url("./pictures/navy-cloud.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: white;
 }
 
-.navbar {
+.navbar-custom {
+    width: 100%;
+    height: 100px;
     background-color: rgba(29, 29, 29, 0.94);
 }
 
-.center .navbar-inner {
-    text-align: center;
-}
-
-.center .navbar-inner .nav {
-    display:inline-block;
+.nav-items li {
+    display: inline-block;
     float: none;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
 }
 
-.navbar-nav li a, .navbar-brand, .navbar-form {
-    line-height: 55px;
-    font-size: 20px;
-    font-family: 'Play', sans-serif;
+.link {
     color: white;
+    font-size: 15px;
+}
+
+.link-title {
+    color: white;
+    font-size: 25px;
+    margin-right: 50px
+}
+
+.nav-items {
+    text-align: center;
+    line-height: 70px;
+    font-family: 'Play', sans-serif;
 }
 
 .main-page {
@@ -111,7 +125,7 @@ body {
     }
 }
 
-
-   
-
+.navbar {
+    height: 100px;
+}
 /*End of profile and navbar css*/
