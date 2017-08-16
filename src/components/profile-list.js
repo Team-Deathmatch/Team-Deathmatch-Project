@@ -7,17 +7,24 @@ class ProfileList extends React.Component {
         return this.props.gamesOwned.sort((a, b) => {
             return b.playtime_forever - a.playtime_forever;
         }).map((item, index) => {
-            return <Profile currentUser={this.props.currentUser} game={item} index={index} key={item + index}/>
+            return <Profile game={item} index={index} key={item + index}/>
         })
     }
 
     render() {
         return (
-                <div className="games-scroll">
-                    <h1 className="play">OWNED GAMES</h1>
+            <div className="main-page">
+                <div className="row">
+                    <h1 className="play">{this.props.currentUser.displayName} Game List</h1>
                     <div className="bar"/>
-                    {this.genGames()}
+                    <div className="col-md-6 games-scroll">
+                        {this.genGames()}
+                    </div>
+                    <div className="col-md-6">
+                        <input placeholder="Add Games To Wish List" className="form-control"/>
+                    </div>
                 </div>
+            </div>
         )
     }
 }
