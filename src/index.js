@@ -17,7 +17,6 @@ import Navbar from "./components/navbar";
 //css
 import "./index.css";
 import SearchContainer from "./containers/search-container";
-import IndGame from "./components/ind-game";
 import IndGameContainer from "./containers/ind-game-container";
 
 const STORE = createStore(reducers, applyMiddleware(thunk));

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import * as actionCreators from "../actions/";
 
 
-class IndGameContainer {
+class IndGameContainer extends React.Component{
     render() {
         return (
             <div></div>
