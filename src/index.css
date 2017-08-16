@@ -47,13 +47,18 @@
     background-color: #99b806
 }
 
-
-
 /*Profile and Navbar CSS*/
+
+.games-scroll {
+    overflow: auto;
+    height: 65vh;
+    width: 50vw;
+    margin-top: 100px;
+    border: 1px rgba(255, 255, 255, 0.1) solid;
+}
 .profile-pic {
-    width: 150px;
-    height: 150px;
-    background-color: deepskyblue;
+    width: inherit;
+    height: inherit;
     display: inline-block;
     margin-left: 20px;
 }
@@ -65,14 +70,15 @@
 }
 
 .bar {
-    width: 80%;
+    width: 40%;
     height: 1px;
     background-color: white;
 }
 
-#play {
+.play {
     font-family: 'Play', sans-serif;
 }
+
 body {
     background: url("./pictures/navy-cloud.jpg");
     background-repeat: no-repeat;
@@ -113,7 +119,7 @@ body {
 }
 
 .main-page {
-    margin: 100px;
+
 }
 
 .navbar {
