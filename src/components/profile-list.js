@@ -17,10 +17,10 @@ class ProfileList extends React.Component {
                 <div className="row">
                     <h1 className="play">{this.props.currentUser.displayName} Game List</h1>
                     <div className="bar"/>
-                    <div className="col-md-6 games-scroll">
+                    <div className="col-md-offset-1 col-md-5 games-scroll">
                         {this.genGames()}
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-offset-1 col-md-5">
                         <input placeholder="Add Games To Wish List" className="form-control"/>
                     </div>
                 </div>
