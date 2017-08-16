@@ -68,6 +68,16 @@ app.get('/steam/:id', (req, res) =>{
     })
 });
 
+app.get('/game/:id', (req, res) =>{
+    request(`http://store.steampowered.com/api/appdetails/?appids=${req.params.id}&currency=USD`, (err, response, body) =>{
+        if(err){
+            res.status(500).send({"Message": "Error on Server", err});
+        } else {
+            res.status(200).send({"Message": "Here is your data", data: JSON.parse((body))})
+        }
+    })
+});
+
 
 
 app.listen(PORT, () => {

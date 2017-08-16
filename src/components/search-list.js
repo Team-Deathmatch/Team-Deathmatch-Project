@@ -5,7 +5,7 @@ import SearchedGames from "./searched-games";
 class SearchList extends React.Component{
     genSearchedGames(){
         return this.props.searchedGames.map((item, index) =>{
-            return <SearchedGames item={item} index={index} key={item +index}/>
+            return <SearchedGames getIndGame={this.props.getIndGame} item={item} index={index} key={item +index}/>
         })
     }
     render() {

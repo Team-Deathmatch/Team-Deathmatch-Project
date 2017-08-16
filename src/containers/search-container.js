@@ -24,9 +24,8 @@ class SearchContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props.searchedGames);
         return(
-            <SearchList searchedGames={this.props.searchedGames} input={this.state.search} handleInput={this.handleInput} getValue={this.getValue} searchGames={this.props.searchGames}/>
+            <SearchList getIndGame={this.props.getIndGame} searchedGames={this.props.searchedGames} input={this.state.search} handleInput={this.handleInput} getValue={this.getValue} searchGames={this.props.searchGames}/>
         )
     }
 }

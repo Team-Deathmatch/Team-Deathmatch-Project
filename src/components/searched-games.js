@@ -1,11 +1,15 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 class SearchedGames extends React.Component {
     render() {
-        console.log(this.props.item);
         return (
             <div>
-                <h1>{this.props.item.name}</h1>
+                <Link to={`/game/${this.props.item.appid}`}>
+                <h1 onClick={()=>{
+                    this.props.getIndGame(this.props.item.appid)
+                }}>{this.props.item.name}</h1>
+                </Link>
             </div>
         )
     }

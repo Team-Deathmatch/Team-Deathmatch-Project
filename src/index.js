@@ -17,6 +17,8 @@ import Navbar from "./components/navbar";
 //css
 import "./index.css";
 import SearchContainer from "./containers/search-container";
+import IndGame from "./components/ind-game";
+import IndGameContainer from "./containers/ind-game-container";
 
 const STORE = createStore(reducers, applyMiddleware(thunk));
 
@@ -32,6 +34,7 @@ class App extends React.Component {
                             <Route exact path="/profile" component={ProfileListContainer}/>
                             <Route exact path="/" component={BaseContainer}/>
                             <Route exact path="/search" component={SearchContainer} />
+                            <Route exact path="/game/:id" component={IndGameContainer}/>
                         </Switch>
                         <Footer/>
                     </div>
