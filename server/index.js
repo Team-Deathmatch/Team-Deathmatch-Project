@@ -8,6 +8,7 @@ let path = require("path");
 let request = require('request');
 
 let authRouter = require('./routes/auth.js');
+let gameRouter = require('./routes/find-game.js');
 
 passport.serializeUser(function (user, done) {
     done(null, user);
@@ -33,7 +34,7 @@ passport.use(new SteamStrategy({
 
 let PORT = process.env.PORT || 8080;
 
-mongoose.connect(`mongodb://localhost:27017/example`);
+mongoose.connect(`mongodb://localhost:27017/steamapp`);
 
 
 let app = express();
@@ -47,6 +48,7 @@ app.use(passport.initialize());
 
 
 app.use('/auth', authRouter);
+app.use('/find-games', gameRouter);
 
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
@@ -58,6 +60,16 @@ app.get("/", (req, res) => {
 
 app.get('/steam/:id', (req, res) =>{
     request(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=9F65B950F0EC9ECABF9DE3D7F46E9A5B&steamid=${req.params.id}&include_appinfo=1&format=json`, (err, response, body) =>{
+        if(err){
+            res.status(500).send({"Message": "Error on Server", err});
+        } else {
+            res.status(200).send({"Message": "Here is your data", data: JSON.parse((body))})
+        }
+    })
+});
+
+app.get('/game/:id', (req, res) =>{
+    request(`http://store.steampowered.com/api/appdetails/?appids=${req.params.id}&currency=USD`, (err, response, body) =>{
         if(err){
             res.status(500).send({"Message": "Error on Server", err});
         } else {

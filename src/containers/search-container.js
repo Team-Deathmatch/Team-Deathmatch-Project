@@ -1,12 +1,37 @@
 import React from "react";
-import Search from "../components/search";
+import {connect} from "react-redux";
+import * as actionCreators from "../actions/";
+import autoBind from "react-autobind";
+import SearchList from "../components/search-list";
 
 class SearchContainer extends React.Component {
+    constructor(){
+        super();
+        autoBind(this);
+        this.state = {
+            search: ""
+        }
+    }
+
+    handleInput(key, event){
+        this.setState({
+            [key]: event.target.value
+        })
+    }
+
+    getValue(key){
+        return this.state[key]
+    }
+
     render() {
         return(
-            <Search/>
+            <SearchList getIndGame={this.props.getIndGame} searchedGames={this.props.searchedGames} input={this.state.search} handleInput={this.handleInput} getValue={this.getValue} searchGames={this.props.searchGames}/>
         )
     }
 }
 
-export default SearchContainer;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+export default connect(mapStateToProps, actionCreators)(SearchContainer);
