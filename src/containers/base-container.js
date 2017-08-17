@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import * as actionCreators from "../actions/";
 import Base from "../components/base";
 import User from "../components/user";
+import ProfileList from "../components/profile-list";
 
 
 class BaseContainer extends React.Component {
@@ -28,7 +29,6 @@ class BaseContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props.currentUser.id);
         if (this.props.currentUser.id === undefined) {
             return (
                 <div>
@@ -38,7 +38,7 @@ class BaseContainer extends React.Component {
         } else {
             return (
                 <div>
-                    <User currentUser={this.props.currentUser}/>
+                    <ProfileList gamesOwned={this.props.gamesOwned} currentUser={this.props.currentUser}/>
                 </div>
             )
         }
