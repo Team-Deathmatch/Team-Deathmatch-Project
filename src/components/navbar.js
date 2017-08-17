@@ -13,6 +13,7 @@ class Navbar extends React.Component {
                         <li><Link className="link" to="/profile">Profile</Link></li>
                         <li><Link className="link" to="/search">Search</Link></li>
                         <li><a className="link" href="auth/steam">Sign In</a></li>
+                        <li><Link className="link" to="/developers">Developers</Link></li>
                     </div>
                 </div>
             </div>

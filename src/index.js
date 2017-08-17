@@ -12,6 +12,7 @@ import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
 import ProfileListContainer from "./containers/profile-list-container";
 import Navbar from "./components/navbar";
+import Contact from "./components/contact";
 
 
 //css
@@ -34,6 +35,7 @@ class App extends React.Component {
                             <Route exact path="/" component={BaseContainer}/>
                             <Route exact path="/search" component={SearchContainer} />
                             <Route exact path="/game/:id" component={IndGameContainer}/>
+                            <Route exact path="/developers" component={Contact}/>
                         </Switch>
                         <Footer/>
                     </div>
