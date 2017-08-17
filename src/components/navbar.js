@@ -41,7 +41,7 @@ class Navbar extends React.Component {
                         <li><Link className="link-title" to="/">Team Deathmatch</Link></li>
                         <li><Link className="link" to="/"><img style={imageStyle} className="profile-pic" src={this.props.currentUser.avatar}/>{profile}</Link></li>
                         <li><Link className="link" to="/search">Search</Link></li>
-                        <li><a style={signInStyle} className="link sign-in" href="auth/steam">Sign In</a></li>
+                        <li><a style={signInStyle} className="link sign-in" href="/auth/steam">Sign In</a></li>
                         <li><a style={signOutStyle} className="link sign-out" href="/">Sign Out</a></li>
                         <li><Link className="link" to="/developers">Developers</Link></li>
 
