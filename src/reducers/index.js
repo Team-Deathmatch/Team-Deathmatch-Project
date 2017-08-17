@@ -3,7 +3,8 @@ let defaultState = {
     currentUser: {},
     gamesOwned: [],
     searchedGames: [],
-    indGame: {}
+    indGame: {},
+    currentPic: ""
 };
 
 let mainReducer = (state = defaultState, action) => {
@@ -26,6 +27,12 @@ let mainReducer = (state = defaultState, action) => {
         return {
             ...state,
             indGame: action.data
+        }
+
+    } else if(action.type === "SET_CURRENT_PIC"){
+        return {
+            ...state,
+            currentPic: action.data
         }
 
     } else {

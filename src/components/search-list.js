@@ -2,12 +2,29 @@ import React from "react";
 import SearchedGames from "./searched-games";
 
 
-class SearchList extends React.Component{
-    genSearchedGames(){
-        return this.props.searchedGames.map((item, index) =>{
-            return <SearchedGames getIndGame={this.props.getIndGame} item={item} index={index} key={item +index}/>
+class SearchList extends React.Component {
+    genSearchedGames() {
+        let gamesInSystem = [];
+        return this.props.searchedGames.sort((a, b) =>{
+            return a.appid - b.appid
+        }).filter((item, index) => {
+            if(gamesInSystem.indexOf(item.name) === -1){
+
+                if (item.name.includes('Trailer') || item.name.includes('Demo') || item.name.includes('Soundtrack') || item.name.includes('Monstercat') || item.name.includes('Pack') || item.name.includes('DLC') || item.name.includes('-') || item.name.includes('Guide') || item.name.includes('trailer') || item.name.includes('Gameplay') || item.name.includes('RU') || item.name.includes('Stash') || item.name.includes('Tactics') || item.name.includes('Teaser') || item.name.includes('Season') || item.name.includes('Pass') || item.name.includes('Beta')) {
+                    return false
+                } else {
+                    gamesInSystem.push(item.name);
+                    return true
+                }
+            } else {
+                return false
+            }
+
+        }).map((item, index) => {
+            return <SearchedGames getIndGame={this.props.getIndGame} item={item} index={index} key={item + index}/>
         })
     }
+
     render() {
         return (
             <div>
@@ -15,7 +32,7 @@ class SearchList extends React.Component{
                     <input className="form-control" value={this.props.getValue("search")} onChange={(event) => {
                         this.props.handleInput("search", event);
                     }}/>
-                    <a onClick={()=>{
+                    <a onClick={() => {
                         this.props.searchGames(this.props.input)
                     }}>Search</a>
                 </div>
