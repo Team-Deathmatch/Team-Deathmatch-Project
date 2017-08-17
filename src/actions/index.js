@@ -2,6 +2,7 @@ import axios from "axios";
 
 export function getIndGame(id) {
     return (dispatch) =>{
+        console.log(id);
         axios.get(`http://localhost:8080/game/${id}`).then((response) =>{
             dispatch(setIndGame(response.data.data[id].data));
         }).catch((error) =>{
@@ -29,6 +30,14 @@ export function getOwnedGames(id) {
         }).catch((error) =>{
             throw error
         })
+    }
+
+}
+
+export function setCurrentPic(data) {
+    return {
+        type: "SET_CURRENT_PIC",
+        data
     }
 
 }

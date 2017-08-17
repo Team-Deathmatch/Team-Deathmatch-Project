@@ -29,7 +29,6 @@ class BaseContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props.currentUser.id);
         if (this.props.currentUser.id === undefined) {
             return (
                 <div>

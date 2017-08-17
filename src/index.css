@@ -135,6 +135,9 @@ body {
 .main-page {
 
 }
+.game-movie{
+    margin-bottom: 0;
+}
 
 .navbar {
     height: 100px;
@@ -146,6 +149,19 @@ body {
 /*.sign-out {*/
     /*display: none;*/
 /*}*/
+
+.game-pics {
+    width: 600px;
+    overflow: scroll;
+    white-space: nowrap;
+}
+/*.current-pic {*/
+    /*display: none;*/
+/*}*/
+.game-thumbnail {
+    margin: 4px;
+    border: 2px solid white;
+}
 /* media queires base page*/
 @media only screen and (max-width: 1200px){
     .foot{
