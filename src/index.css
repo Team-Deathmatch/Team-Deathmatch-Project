@@ -10,6 +10,9 @@
     overflow: auto;
     height: 70vh;
 }
+.game-buttons {
+    margin-top: 1vh;
+}
 
 
 .foot{
@@ -205,6 +208,13 @@ body {
 }
 .profile-searched-games {
     display: none;
+}
+.game-buttons {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
 }
 /* media queires base page*/
 @media only screen and (max-width: 1200px){

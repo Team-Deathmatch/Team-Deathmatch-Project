@@ -81,7 +81,7 @@ class IndGameContainer extends React.Component {
         }
         return (
             <Link to="/">
-                <button onClick={() => {
+                <button className="game-buttons" onClick={() => {
                     if (this.props.currentUser.id === undefined) {
                         window.location = "/auth/steam"
                     } else {
@@ -151,46 +151,69 @@ class IndGameContainer extends React.Component {
                     return (
 
 
-                        <div style={{backgroundImage: `url(${this.props.indGame.background})`}}>
-                            <div className="row">
-                                <div className="col-md-offset-1 col-md-10">
-                                    <h1>{this.props.indGame.name}</h1>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col-md-offset-1 col-md-5">
-                                    <img style={picStyle} className="current-pic" src={this.props.currentPic}
-                                         height="337"
-                                         width="600"/>
-                                    <video className="game-movie" style={movieStyle} width="600" height="337" controls
-                                           src={movie}/>
-                                </div>
-                                <div className="col-md-offset-1 col-md-5">
-                                    <div className="col-md-12">
-                                        <img src={`${this.props.indGame.header_image}`}/>
-                                    </div>
-                                    <div className="col-md-10">
-                                        <p dangerouslySetInnerHTML={{__html: description}} style={{
-                                            marginTop: "2vh",
-                                            height: "100px",
-                                            overflow: "hidden"
-                                        }}/>
+                        <div>
+                            <div style={{backgroundImage: `url(${this.props.indGame.background})`}}>
+                                <div className="row">
+                                    <div className="col-md-offset-2 col-md-10">
+                                        <h1>{this.props.indGame.name}</h1>
                                     </div>
                                 </div>
-                            </div>
-
-
-                            <div className="row">
-                                <div className="col-md-offset-1 col-md-5">
-                                    <div className="game-pics"><img onClick={() => {
-                                        this.unhideVideo();
-                                    }} className="game-thumbnail" height="80px" style={movieStyle}
-                                                                    src={movieThumbnail}/>{this.indGamePics()}</div>
+                                <div className="row">
+                                    <div className="col-md-offset-2 col-md-5">
+                                        <img style={picStyle} className="current-pic" src={this.props.currentPic}
+                                             height="337"
+                                             width="600"/>
+                                        <video className="game-movie" style={movieStyle} width="600" height="337"
+                                               controls
+                                               src={movie}/>
+                                    </div>
+                                    <div className="col-md-5">
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <img src={`${this.props.indGame.header_image}`}/>
+                                            </div>
+                                        </div>
+                                        <div className="row">
+                                            <div className="col-md-8">
+                                                <p dangerouslySetInnerHTML={{__html: description}} style={{
+                                                    marginTop: "2vh",
+                                                    height: "100px",
+                                                    overflow: "hidden"
+                                                }}/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-offset-2 col-md-5">
+                                            <div className="game-pics"><img onClick={() => {
+                                                this.unhideVideo();
+                                            }} className="game-thumbnail" height="80px" style={movieStyle}
+                                                                            src={movieThumbnail}/>{this.indGamePics()}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="col-md-5">
+                                                <div className="row">
+                                                    <div className="col-md-12">
+                                                        Release Date: {this.props.indGame.release_date.date}
+                                                    </div>
+                                                </div>
+                                                <div className="row game-buttons">
+                                                    <div className="col-md-6">
+                                                        {this.addOrNot(this.props.currentWishlist)}
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <button className="game-buttons" onClick={() => {
+                                                            window.location = `http://store.steampowered.com/app/${this.props.indGame.steam_appid}`
+                                                        }}>Buy
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-
-                            <div>{this.props.indGame.release_date.date}</div>
                             <div>{this.categories()}</div>
                             <div>{this.developers()}</div>
                             <div>{this.genres()}</div>
@@ -206,14 +229,6 @@ class IndGameContainer extends React.Component {
                             <div>{price}</div>
                             <div>{this.publishers()}</div>
                             <div>{this.props.indGame.legal_notice}</div>
-                            <div>
-                                {this.addOrNot(this.props.currentWishlist)}
-                            </div>
-                            <button onClick={() =>{
-                                window.location=`http://store.steampowered.com/app/${this.props.indGame.steam_appid}`
-                            }}>Buy</button>
-
-
                         </div>
                     );
                 }
