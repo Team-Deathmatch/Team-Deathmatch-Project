@@ -28,16 +28,19 @@ class SearchList extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="margin-search">
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    this.props.searchGames(this.props.input);
+                    this.props.hideWishlist();
+                }} className="input-group">
                     <input className="form-control" value={this.props.getValue("search")} onChange={(event) => {
                         this.props.handleInput("search", event);
                     }}/>
-                    <a onClick={() => {
-                        this.props.searchGames(this.props.input);
-                        this.props.hideWishlist();
-                    }}>Search</a>
-                </div>
+                    <span className="input-group-btn">
+                    <button className="wish-list-button" type="submit">Search</button>
+                    </span>
+                </form>
                 <div className="searched-games">
                     {this.genSearchedGames()}
                 </div>

@@ -98,8 +98,7 @@
     display: inline-block;
     color: white;
 }
-.ind-game {
-}
+
 .add-wishlist {
     margin-left: 10vw;
 }
@@ -200,6 +199,60 @@ body {
     border: none;
     color: white;
     width: 100px;
+    margin-top: 2vh;
+}
+
+.wish-list-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+}
+
+.remove-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    float: right;
+    margin-top: 4vh;
+}
+
+.wish-list-item {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.wish-list-price {
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    float: right;
+}
+
+.ind-wish {
+    height: 10vh;
+    width: auto;
+    display: inline-block;
+}
+
+.margin-search {
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+.each-game {
     margin-top: 2vh;
 }
 

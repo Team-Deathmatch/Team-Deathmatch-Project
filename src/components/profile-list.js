@@ -64,16 +64,22 @@ class ProfileList extends React.Component {
                     <div className="col-md-offset-1 col-md-5">
                         <div className="row">
                             <div className="col-md-12 games-scroll">
-                                <div className=" search-profile">
+
+                                {/*Search bar and box*/}
+                                <div className="search-profile input-group">
                                     <input placeholder="Add Games To Wish List" className="form-control"
                                            value={this.props.getValue("search")} onChange={(event) => {
                                         this.props.handleInput("search", event);
                                     }}/>
-                                    <a onClick={() => {
+                                    <span className="input-group-btn">
+                                    <button onClick={() => {
                                         this.props.searchGames(this.props.input);
                                         this.props.hideWishlist();
-                                    }}>Search</a>
+                                    }} className="wish-list-button form-control">Search</button>
+                                    </span>
                                 </div>
+
+
                                 <div className="profile-wishlist">
                                     {this.genWishlist()}
                                 </div>
