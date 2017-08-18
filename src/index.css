@@ -1,10 +1,9 @@
 /* footer */
-
-body {
-    overflow-x: hidden;
-}
 * {
     box-sizing: border-box;
+}
+.form-control {
+    width: 50%;
 }
 
 .searched-games {
@@ -35,7 +34,7 @@ body {
 
 .title{
     font-size: 40px;
-
+    font-family: 'Play', sans-serif;
 }
 
 .content{
@@ -77,8 +76,8 @@ body {
 
 .games-scroll {
     overflow: auto;
-    height: 60vh;
-    width: 35vw;
+    height: 70vh;
+    width: 32vw;
     margin-top: 20px;
     border-bottom: 1px gray solid;
     border-top: 1px gray solid;
@@ -96,9 +95,14 @@ body {
     display: inline-block;
     color: white;
 }
+.ind-game {
+}
+.add-wishlist {
+    margin-left: 10vw;
+}
 
 .bar {
-    width: 25%;
+    width: 50%;
     height: 1px;
     background-color: white;
     margin-left: 50px;
@@ -110,11 +114,9 @@ body {
 }
 
 body {
-    background: url("./pictures/navy-cloud.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: linear-gradient(rgb(51, 73, 96), rgb(35, 44, 59));
     color: white;
+    overflow-x: hidden;
 }
 
 .navbar-custom {
@@ -157,7 +159,9 @@ body {
     line-height: 70px;
     font-family: 'Play', sans-serif;
 }
-
+.search-profile {
+    margin-top: 3vh;
+}
 .game-movie{
     margin-bottom: 0;
 }
@@ -184,6 +188,23 @@ body {
 .game-thumbnail {
     margin: 4px;
     border: 2px solid white;
+}
+
+.main-sign-in {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    margin-top: 2vh;
+}
+
+.main-sign-in:hover {
+    text-decoration: none;
+}
+.profile-searched-games {
+    display: none;
 }
 /* media queires base page*/
 @media only screen and (max-width: 1200px){
