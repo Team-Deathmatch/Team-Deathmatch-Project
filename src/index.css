@@ -2,6 +2,9 @@
 * {
     box-sizing: border-box;
 }
+.form-control {
+    width: 50%;
+}
 
 .searched-games {
     overflow: auto;
@@ -75,8 +78,8 @@
 
 .games-scroll {
     overflow: auto;
-    height: 60vh;
-    width: 35vw;
+    height: 70vh;
+    width: 32vw;
     margin-top: 20px;
     border-bottom: 1px gray solid;
     border-top: 1px gray solid;
@@ -94,9 +97,14 @@
     display: inline-block;
     color: white;
 }
+.ind-game {
+}
+.add-wishlist {
+    margin-left: 10vw;
+}
 
 .bar {
-    width: 25%;
+    width: 50%;
     height: 1px;
     background-color: white;
     margin-left: 50px;
@@ -153,9 +161,8 @@ body {
     line-height: 70px;
     font-family: 'Play', sans-serif;
 }
-
-.main-page {
-
+.search-profile {
+    margin-top: 3vh;
 }
 .game-movie{
     margin-bottom: 0;
@@ -197,6 +204,9 @@ body {
 
 .main-sign-in:hover {
     text-decoration: none;
+}
+.profile-searched-games {
+    display: none;
 }
 /* media queires base page*/
 @media only screen and (max-width: 1200px){

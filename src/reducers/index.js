@@ -4,7 +4,8 @@ let defaultState = {
     gamesOwned: [],
     searchedGames: [],
     indGame: {},
-    currentPic: ""
+    currentPic: "",
+    currentWishlist: []
 };
 
 let mainReducer = (state = defaultState, action) => {
@@ -33,6 +34,12 @@ let mainReducer = (state = defaultState, action) => {
         return {
             ...state,
             currentPic: action.data
+        }
+
+    } else if(action.type === "SET_WISHLIST"){
+        return {
+            ...state,
+            currentWishlist: action.data
         }
 
     } else {

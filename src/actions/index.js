@@ -1,5 +1,39 @@
 import axios from "axios";
 
+export function removeFromWishlist(steamid, id) {
+    return (dispatch) =>{
+        axios.delete(`http://localhost:8080/wishlist/${id}`).then((response) =>{
+            dispatch(getWishlist(steamid))
+        }).catch((error) =>{
+            throw error
+        })
+    }
+
+}
+
+
+export function addToWishlist(item) {
+    return(dispatch) =>{
+        axios.post(`http://localhost:8080/wishlist`, item).then((response) =>{
+            dispatch(getWishlist(item.steamId))
+        }).catch((error) =>{
+            throw error
+        })
+    }
+}
+
+
+export function getWishlist(id) {
+    return (dispatch) =>{
+        axios.get(`http://localhost:8080/wishlist/${id}`).then((response) =>{
+            dispatch(setWishlist(response.data.data))
+        }).catch((error) =>{
+            throw error
+        })
+    }
+}
+
+
 export function getIndGame(id) {
     return (dispatch) =>{
         console.log(id);
@@ -74,9 +108,9 @@ export function setUser(data) {
 }
 
 
-export function setData(data) {
+export function setWishlist(data) {
     return {
-        type: "SET_DATA",
+        type: "SET_WISHLIST",
         data
     }
 }

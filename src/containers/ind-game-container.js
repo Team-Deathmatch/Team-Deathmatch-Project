@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import * as actionCreators from "../actions/";
 import IndGamePics from "../components/ind-game-pics";
@@ -32,8 +33,9 @@ class IndGameContainer extends React.Component {
             return <Genres item={item} index={index} key={item + index}/>
         })
     }
-    publishers(){
-        return this.props.indGame.publishers.map((item, index) =>{
+
+    publishers() {
+        return this.props.indGame.publishers.map((item, index) => {
             return <Publishers item={item} index={index} key={item + index}/>
         })
     }
@@ -43,10 +45,59 @@ class IndGameContainer extends React.Component {
         document.querySelector(".current-pic").style.display = "none"
     }
 
+    addOrNot(arr) {
+        let saveData = {
+            name: this.props.indGame.name,
+            image: this.props.indGame.header_image,
+            price: "",
+            appId: this.props.indGame.steam_appid,
+            steamId: ""
+        };
+        if (this.props.indGame.is_free === true) {
+            saveData.price = "Free"
+        } else {
+            saveData.price = `$${(this.props.indGame.price_overview.final / 100).toFixed(2)} ${this.props.indGame.price_overview.currency}`;
+        }
+        if (this.props.currentUser.id === undefined) {
+            saveData.steamId = "";
+        } else {
+            saveData.steamId = this.props.currentUser.id[0];
+        }
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].name === this.props.indGame.name) {
+                return (
+                    <Link to="/">
+                        <button onClick={() => {
+                            if (this.props.currentUser.id === undefined) {
+                                window.location = "/auth/steam"
+                            } else {
+                                this.props.removeFromWishlist(this.props.currentUser.id, this.props.currentWishlist[i]._id);
+                            }
+                        }}>Remove From Wishlist
+                        </button>
+                    </Link>
+                )
+            }
+        }
+        return (
+            <Link to="/">
+                <button onClick={() => {
+                    if (this.props.currentUser.id === undefined) {
+                        window.location = "/auth/steam"
+                    } else {
+                        this.props.addToWishlist(saveData);
+                    }
+                }}>Add to Wishlist
+                </button>
+            </Link>
+        )
+    }
+
     render() {
         if (this.props.indGame === undefined) {
             return <div>Not Valid</div>
         } else {
+            console.log(this.props.indGame.type);
             if (this.props.indGame.type !== "game") {
                 return <div>This is not a game! Select Another!</div>
             } else {
@@ -84,9 +135,8 @@ class IndGameContainer extends React.Component {
                     if (this.props.indGame.is_free === true) {
                         price = "Free"
                     } else {
-                        price = `$${(this.props.indGame.price_overview.final / 100).toFixed(2)} ${this.props.indGame.price_overview.currency}`
+                        price = `$${(this.props.indGame.price_overview.final / 100).toFixed(2)} ${this.props.indGame.price_overview.currency}`;
                     }
-                    console.log(this.props.indGame);
                     let description = "";
                     if (this.props.indGame.short_description !== "") {
                         description = this.props.indGame.short_description;
@@ -152,8 +202,12 @@ class IndGameContainer extends React.Component {
                             <div>{price}</div>
                             <div>{this.publishers()}</div>
                             <div>{this.props.indGame.legal_notice}</div>
-                            <button>Add to Wishlist</button>
-                            <button>Buy</button>
+                            <div>
+                                {this.addOrNot(this.props.currentWishlist)}
+                            </div>
+                            <button onClick={() =>{
+                                window.location=`http://store.steampowered.com/app/${this.props.indGame.steam_appid}`
+                            }}>Buy</button>
 
 
                         </div>
