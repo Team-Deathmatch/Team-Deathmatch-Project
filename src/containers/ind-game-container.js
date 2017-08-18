@@ -32,8 +32,9 @@ class IndGameContainer extends React.Component {
             return <Genres item={item} index={index} key={item + index}/>
         })
     }
-    publishers(){
-        return this.props.indGame.publishers.map((item, index) =>{
+
+    publishers() {
+        return this.props.indGame.publishers.map((item, index) => {
             return <Publishers item={item} index={index} key={item + index}/>
         })
     }
@@ -99,9 +100,11 @@ class IndGameContainer extends React.Component {
                         }
                     }
                     return (
+
+
                         <div style={{backgroundImage: `url(${this.props.indGame.background})`}}>
                             <div className="row">
-                                <div className="col-md-offset-1 col-md-11">
+                                <div className="col-md-offset-1 col-md-10">
                                     <h1>{this.props.indGame.name}</h1>
                                 </div>
                             </div>
@@ -111,23 +114,23 @@ class IndGameContainer extends React.Component {
                                          height="337"
                                          width="600"/>
                                     <video className="game-movie" style={movieStyle} width="600" height="337" controls
-                                           src={movie}></video>
+                                           src={movie}/>
                                 </div>
-                                <div className="col-md-5">
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <img src={`${this.props.indGame.header_image}`}/>
-                                        </div>
-                                        <div className="col-md-10">
-                                            <p dangerouslySetInnerHTML={{__html: description}} style={{
-                                                marginTop: "2vh",
-                                                height: "100px",
-                                                overflow: "hidden"
-                                            }}/>
-                                        </div>
+                                <div className="col-md-offset-1 col-md-5">
+                                    <div className="col-md-12">
+                                        <img src={`${this.props.indGame.header_image}`}/>
+                                    </div>
+                                    <div className="col-md-10">
+                                        <p dangerouslySetInnerHTML={{__html: description}} style={{
+                                            marginTop: "2vh",
+                                            height: "100px",
+                                            overflow: "hidden"
+                                        }}/>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div className="row">
                                 <div className="col-md-offset-1 col-md-5">
                                     <div className="game-pics"><img onClick={() => {
@@ -136,6 +139,8 @@ class IndGameContainer extends React.Component {
                                                                     src={movieThumbnail}/>{this.indGamePics()}</div>
                                 </div>
                             </div>
+
+
                             <div>{this.props.indGame.release_date.date}</div>
                             <div>{this.categories()}</div>
                             <div>{this.developers()}</div>
