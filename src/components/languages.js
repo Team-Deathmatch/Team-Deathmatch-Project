@@ -1,12 +1,12 @@
 import React from "react";
 
 
-class Categories extends React.Component {
+class Languages extends React.Component{
     render() {
         return (
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around"}}>
                 <div className="ind-category">
-                    <div className="category-name">{this.props.item.description}</div>
+                    <div className="category-name">{this.props.item}</div>
                 </div>
             </div>
         );
@@ -15,4 +15,4 @@ class Categories extends React.Component {
 }
 
 
-export default Categories;
+export default Languages;

@@ -209,12 +209,63 @@ body {
 .profile-searched-games {
     display: none;
 }
-.game-buttons {
+.add-wishlist-button {
     font-family: 'Play', sans-serif;
     font-size: 14px;
     background-color: #7da10e;
     border: none;
     color: white;
+    width: 200px;
+}
+.buy-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+}
+.pics-row {
+    margin-bottom: 3vh;
+}
+.categories-box {
+    background-color: rgb(15, 20, 27);
+}
+.ind-category {
+    background-color: rgb(23,38,52);
+    z-index: 2;
+    width: 85%;
+    height: 2.5vh;
+    margin: .2vh
+
+}
+.languages {
+    margin-top: 3vh;
+}
+.ind-category:hover {
+    background-color: rgb(42, 116,153);
+}
+.category-name {
+    margin-left: .5vw;
+}
+.game-bar {
+    background-color: rgba(32,39,52, 0.7);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.game-info {
+    margin-top: 2vh;
+}
+.platforms {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+.platform-names {
+    word-spacing: 10vw;
+}
+.developers {
+    margin-top: 2vh;
 }
 /* media queires base page*/
 @media only screen and (max-width: 1200px){

@@ -6,7 +6,7 @@ import IndGamePics from "../components/ind-game-pics";
 import Categories from "../components/categories";
 import Developers from "../components/developers";
 import Genres from "../components/genres";
-import Publishers from "../components/publishers";
+import Languages from "../components/languages";
 
 
 class IndGameContainer extends React.Component {
@@ -34,9 +34,9 @@ class IndGameContainer extends React.Component {
         })
     }
 
-    publishers() {
-        return this.props.indGame.publishers.map((item, index) => {
-            return <Publishers item={item} index={index} key={item + index}/>
+    languages() {
+        return this.props.indGame.supported_languages.split(",").map((item, index) => {
+            return <Languages item={item} index={index} key={item + index}/>
         })
     }
 
@@ -81,7 +81,7 @@ class IndGameContainer extends React.Component {
         }
         return (
             <Link to="/">
-                <button className="game-buttons" onClick={() => {
+                <button className="add-wishlist-button" onClick={() => {
                     if (this.props.currentUser.id === undefined) {
                         window.location = "/auth/steam"
                     } else {
@@ -145,7 +145,7 @@ class IndGameContainer extends React.Component {
                     }
                     for (let key in this.props.indGame.platforms) {
                         if (this.props.indGame.platforms[key] === true) {
-                            platforms += `<li>${key}</li> `;
+                            platforms += `${key}        `;
                         }
                     }
                     return (
@@ -174,61 +174,97 @@ class IndGameContainer extends React.Component {
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-8">
+                                            <div className="col-md-12">
                                                 <p dangerouslySetInnerHTML={{__html: description}} style={{
                                                     marginTop: "2vh",
                                                     height: "100px",
-                                                    overflow: "hidden"
+                                                    overflow: "hidden",
+                                                    maxWidth: "500px"
                                                 }}/>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row">
-                                        <div className="col-md-offset-2 col-md-5">
-                                            <div className="game-pics"><img onClick={() => {
-                                                this.unhideVideo();
-                                            }} className="game-thumbnail" height="80px" style={movieStyle}
-                                                                            src={movieThumbnail}/>{this.indGamePics()}
-                                            </div>
+                                </div>
+                                <div className="row pics-row">
+                                    <div className="col-md-offset-2 col-md-5">
+                                        <div className="game-pics"><img onClick={() => {
+                                            this.unhideVideo();
+                                        }} className="game-thumbnail" height="80px" style={movieStyle}
+                                                                        src={movieThumbnail}/>{this.indGamePics()}
                                         </div>
-                                        <div>
-                                            <div className="col-md-5">
-                                                <div className="row">
-                                                    <div className="col-md-12">
-                                                        Release Date: {this.props.indGame.release_date.date}
-                                                    </div>
+                                    </div>
+                                    <div>
+                                        <div className="col-md-5">
+                                            <div className="row">
+                                                <div className="col-md-12">
+                                                    Release Date: {this.props.indGame.release_date.date}
                                                 </div>
-                                                <div className="row game-buttons">
-                                                    <div className="col-md-6">
-                                                        {this.addOrNot(this.props.currentWishlist)}
-                                                    </div>
-                                                    <div className="col-md-6">
-                                                        <button className="game-buttons" onClick={() => {
-                                                            window.location = `http://store.steampowered.com/app/${this.props.indGame.steam_appid}`
-                                                        }}>Buy
-                                                        </button>
-                                                    </div>
+                                            </div>
+                                            <div className="row game-buttons">
+                                                <div className="col-md-5">
+                                                    {this.addOrNot(this.props.currentWishlist)}
+                                                </div>
+                                                <div className="col-md-7">
+                                                    <button className="buy-button" onClick={() => {
+                                                        window.location = `http://store.steampowered.com/app/${this.props.indGame.steam_appid}`
+                                                    }}>{price}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="col-md-12 developers">
+                                                    Developers: {this.developers()}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div>{this.categories()}</div>
-                            <div>{this.developers()}</div>
-                            <div>{this.genres()}</div>
-                            <div>
-                                <div>
-                                    Platforms
+                            <div className="row game-info">
+                                <div className="col-md-offset-2 col-md-8 game-bar">
+                                    <div className="col-md-12 platforms">
+                                        <div className="platform-names">{platforms}</div>
+                                    </div>
                                 </div>
-                                <ul dangerouslySetInnerHTML={{__html: platforms}}/>
                             </div>
-                            <div dangerouslySetInnerHTML={{__html: this.props.indGame.pc_requirements.minimum}}/>
-                            <div dangerouslySetInnerHTML={{__html: this.props.indGame.pc_requirements.recommended}}/>
-                            <div>{this.props.indGame.supported_languages}</div>
-                            <div>{price}</div>
-                            <div>{this.publishers()}</div>
-                            <div>{this.props.indGame.legal_notice}</div>
+                            <div className="row game-info">
+                                <div className="col-md-offset-2 col-md-3">
+                                    <div
+                                        dangerouslySetInnerHTML={{__html: this.props.indGame.pc_requirements.minimum}}/>
+                                    <div
+                                        dangerouslySetInnerHTML={{__html: this.props.indGame.pc_requirements.recommended}}/>
+                                </div>
+                                <div className="col-md-2">
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <div className="categories-box">
+                                                <div>{this.genres()}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="row languages">
+                                        <div className="col-md-12">
+                                            <div className="categories-box">
+                                                <div>{this.languages()}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-5">
+                                    <div className="row">
+                                        <div className="col-md-offset-2 col-md-5">
+                                            <div className="categories-box">
+                                                <div>{this.categories()}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row game-info">
+                                <div className="col-md-offset-2 col-md-8 game-bar">
+                                    <div>{this.props.indGame.legal_notice}</div>
+                                </div>
+                            </div>
                         </div>
                     );
                 }
