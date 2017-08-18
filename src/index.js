@@ -5,7 +5,7 @@ import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers/";
 import "./index.css";
-import {Route, BrowserRouter, Switch} from "react-router-dom";
+import {Route, HashRouter, Switch} from "react-router-dom";
 
 //import components
 import BaseContainer from "./containers/base-container"
@@ -27,7 +27,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <BrowserRouter>
+                <HashRouter>
                     <div>
                         <Navbar/>
                         <Switch>
@@ -39,7 +39,7 @@ class App extends React.Component {
                         </Switch>
                         <Footer/>
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         );
     }
