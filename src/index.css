@@ -14,17 +14,17 @@
 
 .foot{
     background-color: #171a21;
-    height: 100px;
+    height: 70px;
     text-align: center;
     color: gray;
-    margin-top: 400px
-    
+    margin-top: 400px;
+    text-decoration: none
 }
 
-.rights{
-    margin-top: 70px;
-
+.foot-dev{
+    margin-top: 10px
 }
+
 
 /* base page */
 .signup{
@@ -50,9 +50,7 @@
 
 /* contact page */
 .dev{
-    background-color: skyblue;
-    width:50%;
-    height:250px;
+    height:200px;
 }
 
 .size{
@@ -66,11 +64,11 @@
 }
 
 .bio{
-    margin-top: 50px
+    margin-top: 20px
 }
 
 .info{
-    margin-top: 100px
+    margin-top: 60px
 }
 
 
@@ -217,18 +215,10 @@ body {
     .content{
         margin-top: 300px
     }
-}
-
-@media only screen and (max-width: 414px){
-    .link{
-        font-size: 25px;
+    .dev{
+        margin-right: 100px
     }
-    .navbar-custom{
-        height: 200px;
-    }
-
 }
-
 @media only screen and (max-width: 1024px){
  .git{
      display: none;
@@ -244,4 +234,33 @@ body {
  .content{
      margin-top: 500px
  }
+
+ .name{
+     margin-top: 75px
+ }
 }
+
+@media only screen and (max-width: 768px){
+  .link-title{
+      margin-right: 10px
+  }
+   
+}
+
+@media only screen and (max-width: 414px){
+    .link{
+        font-size: 25px;
+    }
+    .navbar-custom{
+        height: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 1366px){
+    .dev{
+    
+    }
+}
+
+
