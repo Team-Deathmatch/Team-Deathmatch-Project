@@ -10,7 +10,6 @@ import {Route, HashRouter, Switch} from "react-router-dom";
 //import components
 import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
-import ProfileListContainer from "./containers/profile-list-container";
 import Navbar from "./components/navbar";
 import Contact from "./components/contact";
 
@@ -31,7 +30,6 @@ class App extends React.Component {
                     <div>
                         <Navbar/>
                         <Switch>
-                            <Route exact path="/profile" component={ProfileListContainer}/>
                             <Route exact path="/" component={BaseContainer}/>
                             <Route exact path="/search" component={SearchContainer} />
                             <Route exact path="/game/:id" component={IndGameContainer}/>

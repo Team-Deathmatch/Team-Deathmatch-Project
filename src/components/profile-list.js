@@ -48,20 +48,20 @@ class ProfileList extends React.Component {
         return (
             <div className="main-page">
                 <div className="row">
-                    <div className="col-md-5">
+                    <div className="col-md-5 game-list">
                         <h1 className="play">{this.props.currentUser.displayName} Game List</h1>
                         <div className="bar"/>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-sm-12">
                         <h1 className="play">{this.props.currentUser.displayName} Wish List</h1>
                         <div className="bar"/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-offset-1 col-md-5 games-scroll">
+                    <div className="col-md-offset-1 col-md-5 games-scroll games-owned">
                         {this.genGames()}
                     </div>
-                    <div className="col-md-offset-1 col-md-5">
+                    <div className="col-md-offset-1 col-md-5 col-sm-offset-2 col-sm-10">
                         <div className="row">
                             <div className="col-md-12 games-scroll">
 

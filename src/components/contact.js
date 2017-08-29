@@ -18,15 +18,18 @@ class Contact extends React.Component {
                             <p>dakota.heninger.22@gmail.com</p>
                             <h4>Github:</h4>
                             <span className="fa-stack fa-lg hub">
-                                <a href="https://github.com/dakotaheninger" target="_blank"><FontAwesome stack="2x" name="github"/></a>
+                                <a href="https://github.com/dakotaheninger" target="_blank"><FontAwesome stack="2x"
+                                                                                                         name="github"/></a>
                             </span>
                             <h4 className="bio">Bio:</h4>
-                              <div>
-                            <p>Lyft photo booth offal artisan, fingerstache pabst succulents next level cronut meggings palo santo squid venmo ugh semiotics. Shabby chic vegan tbh copper mug slow-carb. Tacos neutra cray, jianbing polaroid chia yuccie try-hard kickstarter intelligentsia synth. Franzen four loko gentrify selfies, trust fund cornhole scenester viral skateboard vinyl air plant kombucha ennui iPhone fanny pack. Edison bulb leggings direct trade, prism letterpress gochujang hell of mixtape XOXO hoodie squid copper mug raw denim post-ironic. Palo santo etsy gentrify waistcoat poke plaid roof party. Master cleanse air plant fixie XOXO drinking vinegar la croix. Health goth wayfarers edison bulb, pickled scenester wolf tbh helvetica readymade. Franzen shoreditch chicharrones brooklyn lyft pabst VHS fingerstache fam butcher messenger bag. Tote bag single-origin coffee art party direct trade, iceland cold-pressed fashion axe seitan vexillologist shoreditch taxidermy asymmetrical activated charcoal retro twee. Poutine iPhone austin four dollar toast pop-up.
-Oh. You need a little dummy text for your mockup? How quaint.
-
-I bet you’re still using Bootstrap too…</p>
-                        </div>
+                            <div>
+                                <p> Hello! My name is Dakota Heninger and I am a Web Developer! I am a recent graduate
+                                    from V School in Salt Lake City, Utah. I attended V School to learn and sharpen my
+                                    skills through an intensive Full Stack Javascript Course. I have a passion for Web
+                                    Development and enjoy pushing myself to the limits to learn and grow! I also have a
+                                    passion for many other things, these include: Fishing, Hunting, Snowboarding, Video
+                                    Games, Movies, Binge Watching Netflix, and Sports! Enjoy the site!</p>
+                            </div>
 
                         </div>
                     </div>
@@ -41,12 +44,19 @@ I bet you’re still using Bootstrap too…</p>
                             <p>jojo.jensen03@gmail.com</p>
                             <h4>Github:</h4>
                             <span className="fa-stack fa-lg hub">
-                                <a href="https://github.com/JordanDJensen" target="_blank"><FontAwesome stack="2x" name="github"/></a>
+                                <a href="https://github.com/JordanDJensen" target="_blank"><FontAwesome stack="2x"
+                                                                                                        name="github"/></a>
                             </span>
                             <h4 className="bio">Bio:</h4>
                         </div>
                         <div>
-                            <p></p>
+                            <p>I am 22 years old. I am attending Salt Lake Community College to obtain my Associate
+                                degree in Computer Science. My coding journey started in a college class where I learned
+                                HTML and CSS. From there my passion for coding grew and since then I have looked for
+                                opportunities to build up my skills . My goal right now is to eventually become a Senior
+                                Web Developer. I am excited to be on this journey and meet people along the way that are
+                                pursuing similar goals as I am. Check out this web site and see what Dakota, Wyatt, and
+                                I have created. Enjoy!</p>
                         </div>
                     </div>
 
@@ -62,17 +72,15 @@ I bet you’re still using Bootstrap too…</p>
                             <p>dmonteblackhurst@gmail.com</p>
                             <h4>Github:</h4>
                             <span className="fa-stack fa-lg hub">
-                                <a href="https://github.com/monteblack7" target="_blank"><FontAwesome stack="2x" name="github"/></a>
+                                <a href="https://github.com/monteblack7" target="_blank"><FontAwesome stack="2x"
+                                                                                                      name="github"/></a>
                             </span>
                             <h4 className="bio">Bio:</h4>
-  <div>
-                            <p>Lyft photo booth offal artisan, fingerstache pabst succulents next level cronut meggings palo santo squid venmo ugh semiotics. Shabby chic vegan tbh copper mug slow-carb. Tacos neutra cray, jianbing polaroid chia yuccie try-hard kickstarter intelligentsia synth. Franzen four loko gentrify selfies, trust fund cornhole scenester viral skateboard vinyl air plant kombucha ennui iPhone fanny pack. Edison bulb leggings direct trade, prism letterpress gochujang hell of mixtape XOXO hoodie squid copper mug raw denim post-ironic. Palo santo etsy gentrify waistcoat poke plaid roof party. Master cleanse air plant fixie XOXO drinking vinegar la croix. Health goth wayfarers edison bulb, pickled scenester wolf tbh helvetica readymade. Franzen shoreditch chicharrones brooklyn lyft pabst VHS fingerstache fam butcher messenger bag. Tote bag single-origin coffee art party direct trade, iceland cold-pressed fashion axe seitan vexillologist shoreditch taxidermy asymmetrical activated charcoal retro twee. Poutine iPhone austin four dollar toast pop-up.
-Oh. You need a little dummy text for your mockup? How quaint.
- 
-I bet you’re still using Bootstrap too…</p>
+                            <div>
+                                <p></p>
+                            </div>
                         </div>
-                        </div>
-                    
+
                     </div>
 
                 </div>

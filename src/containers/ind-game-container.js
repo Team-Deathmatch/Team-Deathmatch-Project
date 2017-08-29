@@ -159,7 +159,7 @@ class IndGameContainer extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-offset-2 col-md-5">
+                                    <div className="col-md-offset-1 col-md-5">
                                         <img style={picStyle} className="current-pic" src={this.props.currentPic}
                                              height="337"
                                              width="600"/>
@@ -167,7 +167,7 @@ class IndGameContainer extends React.Component {
                                                controls
                                                src={movie}/>
                                     </div>
-                                    <div className="col-md-5">
+                                    <div className="col-md-offset-1 col-md-5">
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <img src={`${this.props.indGame.header_image}`}/>
@@ -186,7 +186,7 @@ class IndGameContainer extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row pics-row">
-                                    <div className="col-md-offset-2 col-md-5">
+                                    <div className="col-md-offset-1 col-md-5">
                                         <div className="game-pics"><img onClick={() => {
                                             this.unhideVideo();
                                         }} className="game-thumbnail" height="80px" style={movieStyle}
@@ -194,7 +194,7 @@ class IndGameContainer extends React.Component {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="col-md-5">
+                                        <div className="col-md-offset-1 col-md-5">
                                             <div className="row">
                                                 <div className="col-md-12">
                                                     Release Date: {this.props.indGame.release_date.date}

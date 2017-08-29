@@ -209,6 +209,7 @@ body {
     border: none;
     color: white;
     width: 100px;
+    margin-left: 3vw;
 }
 
 .remove-button {
@@ -219,7 +220,6 @@ body {
     color: white;
     width: 100px;
     float: right;
-    margin-top: 4vh;
 }
 
 .wish-list-item {
@@ -244,12 +244,14 @@ body {
 .ind-wish {
     height: 10vh;
     width: auto;
-    display: inline-block;
+    margin-bottom: 2vh;
+    /*display: inline-block;*/
 }
 
 .margin-search {
     margin-left: 20vw;
     margin-right: 20vw;
+    margin-top: 10vh;
 }
 
 .each-game {
@@ -320,6 +322,9 @@ body {
 .developers {
     margin-top: 2vh;
 }
+.button-spacing {
+    margin-bottom: 3vh;
+}
 /* media queires base page*/
 @media only screen and (max-width: 1200px){
     .foot{
@@ -351,6 +356,12 @@ body {
 
  .name{
      margin-top: 75px
+ }
+ .game-list {
+     display: none;
+ }
+ .games-owned {
+     display: none;
  }
 }
 
