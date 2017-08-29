@@ -6,9 +6,11 @@ let passport = require('passport');
 let SteamStrategy = require("passport-steam");
 let path = require("path");
 let request = require('request');
+let config = require('./config.js');
 
 let authRouter = require('./routes/auth.js');
 let gameRouter = require('./routes/find-game.js');
+let wishlistRouter = require('./routes/wishlist-route.js');
 
 passport.serializeUser(function (user, done) {
     done(null, user);
@@ -34,7 +36,13 @@ passport.use(new SteamStrategy({
 
 let PORT = process.env.PORT || 8080;
 
-mongoose.connect(`mongodb://localhost:27017/steamapp`);
+mongoose.connect(config.remotedb, (err) => {
+    if(err) {
+        console.log(err)
+    }else{
+        console.log('Connected to db')
+    }
+});
 
 
 let app = express();
@@ -49,6 +57,7 @@ app.use(passport.initialize());
 
 app.use('/auth', authRouter);
 app.use('/find-games', gameRouter);
+app.use('/wishlist', wishlistRouter);
 
 
 app.use(express.static(path.resolve(__dirname, "..", "build")));
@@ -71,6 +80,7 @@ app.get('/steam/:id', (req, res) =>{
 app.get('/game/:id', (req, res) =>{
     request(`http://store.steampowered.com/api/appdetails/?appids=${req.params.id}&currency=USD`, (err, response, body) =>{
         if(err){
+            console.log(err);
             res.status(500).send({"Message": "Error on Server", err});
         } else {
             res.status(200).send({"Message": "Here is your data", data: JSON.parse((body))})

@@ -1,8 +1,9 @@
 let request = require('request');
 let mongoose = require("mongoose");
 let GameModel = require("../models/game-model.js");
+let config = require(`../config.js`);
 
-mongoose.connect(`mongodb://localhost:27017/steamapp`);
+mongoose.connect(config.remotedb);
 
 request(`https://api.steampowered.com/ISteamApps/GetAppList/v002`, (err, response, body) =>{
     if(err){

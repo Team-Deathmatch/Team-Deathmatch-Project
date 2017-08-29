@@ -2,28 +2,32 @@
 * {
     box-sizing: border-box;
 }
+.form-control {
+    width: 50%;
+}
 
 .searched-games {
     overflow: auto;
     height: 70vh;
-    width: 100vw;
+}
+.game-buttons {
+    margin-top: 1vh;
 }
 
 
 .foot{
     background-color: #171a21;
-    height: 110px;
+    height: 70px;
     text-align: center;
     color: gray;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    margin-top: 400px;
+    text-decoration: none
 }
 
-.rights{
-    margin-top: 30px;
+.foot-dev{
+    margin-top: 10px
 }
+
 
 /* base page */
 .signup{
@@ -33,13 +37,13 @@
 
 .title{
     font-size: 40px;
-
+    font-family: 'Play', sans-serif;
 }
 
 .content{
     background-color: #171a21;
     color: gray;
-    margin-top: 230px;
+    margin-top: 290px;
 }
 
 .shift{
@@ -47,14 +51,40 @@
     background-color: #99b806
 }
 
+/* contact page */
+.dev{
+    height:200px;
+}
+
+.size{
+    padding-top: 50px
+}
+
+
+.move-right{
+    margin-left: 100px;
+    margin-right: 100px
+}
+
+.bio{
+    margin-top: 20px
+}
+
+.info{
+    margin-top: 60px
+}
+
+
 /*Profile and Navbar CSS*/
 
 .games-scroll {
     overflow: auto;
-    height: 65vh;
-    width: 50vw;
-    margin-top: 100px;
-    border: 1px rgba(255, 255, 255, 0.1) solid;
+    height: 70vh;
+    width: 32vw;
+    margin-top: 20px;
+    border-bottom: 1px gray solid;
+    border-top: 1px gray solid;
+    font-family: 'Play', sans-serif;
 }
 .profile-pic {
     width: inherit;
@@ -64,27 +94,31 @@
 }
 
 .profile-name {
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     display: inline-block;
     color: white;
 }
 
+.add-wishlist {
+    margin-left: 10vw;
+}
+
 .bar {
-    width: 40%;
+    width: 50%;
     height: 1px;
     background-color: white;
+    margin-left: 50px;
 }
 
 .play {
     font-family: 'Play', sans-serif;
+    margin-left: 50px;
 }
 
 body {
-    background: url("./pictures/navy-cloud.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: linear-gradient(rgb(51, 73, 96), rgb(35, 44, 59));
     color: white;
+    overflow-x: hidden;
 }
 
 .navbar-custom {
@@ -106,10 +140,20 @@ body {
     font-size: 15px;
 }
 
+.link:hover {
+    text-decoration: none;
+    color: gray;
+}
+
 .link-title {
     color: white;
     font-size: 25px;
     margin-right: 50px
+}
+
+.link-title:hover {
+    text-decoration: none;
+    color: gray;
 }
 
 .nav-items {
@@ -117,13 +161,169 @@ body {
     line-height: 70px;
     font-family: 'Play', sans-serif;
 }
-
-.main-page {
-
+.search-profile {
+    margin-top: 3vh;
+}
+.game-movie{
+    margin-bottom: 0;
 }
 
 .navbar {
     height: 100px;
+}
+.profile-pic {
+    margin-right: 1vw;
+    border: 1px solid gray;
+}
+/*.sign-out {*/
+    /*display: none;*/
+/*}*/
+
+.game-pics {
+    width: 600px;
+    overflow: scroll;
+    white-space: nowrap;
+}
+/*.current-pic {*/
+    /*display: none;*/
+/*}*/
+.game-thumbnail {
+    margin: 4px;
+    border: 2px solid white;
+}
+
+.main-sign-in {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    margin-top: 2vh;
+}
+
+.wish-list-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    margin-left: 3vw;
+}
+
+.remove-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    float: right;
+}
+
+.wish-list-item {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-left: 1vw;
+}
+
+.wish-list-price {
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+    float: right;
+}
+
+.ind-wish {
+    height: 10vh;
+    width: auto;
+    margin-bottom: 2vh;
+    /*display: inline-block;*/
+}
+
+.margin-search {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 10vh;
+}
+
+.each-game {
+    margin-top: 2vh;
+}
+
+.main-sign-in:hover {
+    text-decoration: none;
+}
+.profile-searched-games {
+    display: none;
+}
+.add-wishlist-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 200px;
+}
+.buy-button {
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    background-color: #7da10e;
+    border: none;
+    color: white;
+    width: 100px;
+}
+.pics-row {
+    margin-bottom: 3vh;
+}
+.categories-box {
+    background-color: rgb(15, 20, 27);
+}
+.ind-category {
+    background-color: rgb(23,38,52);
+    z-index: 2;
+    width: 85%;
+    height: 2.5vh;
+    margin: .2vh
+
+}
+.languages {
+    margin-top: 3vh;
+}
+.ind-category:hover {
+    background-color: rgb(42, 116,153);
+}
+.category-name {
+    margin-left: .5vw;
+}
+.game-bar {
+    background-color: rgba(32,39,52, 0.7);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.game-info {
+    margin-top: 2vh;
+}
+.platforms {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+.platform-names {
+    word-spacing: 10vw;
+}
+.developers {
+    margin-top: 2vh;
+}
+.button-spacing {
+    margin-bottom: 3vh;
 }
 /* media queires base page*/
 @media only screen and (max-width: 1200px){
@@ -134,4 +334,58 @@ body {
     .content{
         margin-top: 300px
     }
+    .dev{
+        margin-right: 100px
+    }
 }
+@media only screen and (max-width: 1024px){
+ .git{
+     display: none;
+ }
+ .foot{
+     height: 100px;
+     margin-top: 520px
+ }
+ .rights{
+     margin-top:50px
+ 
+ }
+ .content{
+     margin-top: 500px
+ }
+
+ .name{
+     margin-top: 75px
+ }
+ .game-list {
+     display: none;
+ }
+ .games-owned {
+     display: none;
+ }
+}
+
+@media only screen and (max-width: 768px){
+  .link-title{
+      margin-right: 10px
+  }
+   
+}
+
+@media only screen and (max-width: 414px){
+    .link{
+        font-size: 25px;
+    }
+    .navbar-custom{
+        height: 200px;
+    }
+
+}
+
+@media only screen and (max-width: 1366px){
+    .dev{
+    
+    }
+}
+
+

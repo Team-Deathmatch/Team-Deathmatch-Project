@@ -5,13 +5,13 @@ import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers/";
 import "./index.css";
-import {Route, BrowserRouter, Switch} from "react-router-dom";
+import {Route, HashRouter, Switch} from "react-router-dom";
 
 //import components
 import BaseContainer from "./containers/base-container"
 import Footer from "./components/footer";
-import ProfileListContainer from "./containers/profile-list-container";
 import Navbar from "./components/navbar";
+import Contact from "./components/contact";
 
 
 //css
@@ -26,18 +26,18 @@ class App extends React.Component {
     render() {
         return (
             <div className="container-fluid">
-                <BrowserRouter>
+                <HashRouter>
                     <div>
                         <Navbar/>
                         <Switch>
-                            <Route exact path="/profile" component={ProfileListContainer}/>
                             <Route exact path="/" component={BaseContainer}/>
                             <Route exact path="/search" component={SearchContainer} />
                             <Route exact path="/game/:id" component={IndGameContainer}/>
+                            <Route exact path="/developers" component={Contact}/>
                         </Switch>
                         <Footer/>
                     </div>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         );
     }
