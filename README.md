@@ -1,2 +1,2 @@
-#Steam Project
+#Steam Project (NOT OPTIMIZED FOR MOBILE)
 <p>This project is focused heavily on collaboration. Together we will be making an App where someone can log into their Steam Account, see the games they already own, search the Steam Store for games, see titles, descriptions, pictures, prices, etc…, and add the games to a wishlist!</p>
