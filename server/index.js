@@ -12,6 +12,7 @@ let authRouter = require('./routes/auth.js');
 let gameRouter = require('./routes/find-game.js');
 let wishlistRouter = require('./routes/wishlist-route.js');
 
+
 passport.serializeUser(function (user, done) {
     done(null, user);
 });
@@ -22,8 +23,8 @@ passport.deserializeUser(function (obj, done) {
 
 
 passport.use(new SteamStrategy({
-        returnURL: 'http://localhost:8080/auth/steam/return',
-        realm: 'http://localhost:8080/',
+        returnURL: 'http://teamdeathmatch.now.sh/auth/steam/return',
+        realm: 'http://teamdeathmatch.now.sh/',
         apiKey: '9F65B950F0EC9ECABF9DE3D7F46E9A5B'
     },
     (identifier, profile, done) => {

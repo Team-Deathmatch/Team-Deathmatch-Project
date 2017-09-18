@@ -8,7 +8,7 @@ class Contact extends React.Component {
                 <div className="row move-right">
                     <div className="col-lg-4">
                         <h3>Dakota Heninger</h3>
-                        <img src="/devs/Dakota" className="dev"/>
+                        <img src="/devs/Dakota.jpeg" className="dev"/>
                         <div className="info">
                             <h4>Phone:
                             </h4>
@@ -62,7 +62,7 @@ class Contact extends React.Component {
 
                     <div className="col-lg-4">
                         <h3 className="name">Wyatt Blackhurst</h3>
-                        <img src="/devs/Wyatt" className="dev"/>
+                        <img src="/devs/Wyatt.png" className="dev"/>
                         <div className="info">
                             <h4>Phone:
                             </h4>

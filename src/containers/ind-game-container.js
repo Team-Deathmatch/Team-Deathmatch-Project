@@ -95,11 +95,13 @@ class IndGameContainer extends React.Component {
 
     render() {
         if (this.props.indGame === undefined) {
-            return <div>Not Valid</div>
+            return <div>Sorry this API is very difficult! It looks like this game isnt linked to anything! Please select
+                another!</div>
         } else {
             console.log(this.props.indGame.type);
             if (this.props.indGame.type !== "game") {
-                return <div>This is not a game! Select Another!</div>
+                return <div>Sorry this API is very difficult! It looks like this game isnt linked to anything! Please
+                    select another!</div>
             } else {
                 if (this.props.indGame.name === undefined) {
                     return <div>Loading</div>
