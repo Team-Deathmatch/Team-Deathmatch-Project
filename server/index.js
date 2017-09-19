@@ -23,9 +23,9 @@ passport.deserializeUser(function (obj, done) {
 
 
 passport.use(new SteamStrategy({
-        returnURL: 'http://teamdeathmatch.now.sh/auth/steam/return',
-        realm: 'http://teamdeathmatch.now.sh/',
-        apiKey: '9F65B950F0EC9ECABF9DE3D7F46E9A5B'
+        returnURL: 'http://team-deathmatch.com/auth/steam/return',
+        realm: 'http://team-deathmatch.com/',
+        apiKey: config.apiKey
     },
     (identifier, profile, done) => {
         process.nextTick(function () {
@@ -35,7 +35,7 @@ passport.use(new SteamStrategy({
     }
 ));
 
-let PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 8000;
 
 mongoose.connect(config.remotedb, (err) => {
     if(err) {
